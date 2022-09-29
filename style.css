@@ -37,6 +37,13 @@ p {
 	line-height: 1.5em;
 }
 
+.headline {
+	text-align: center;
+	font-size: 20px;
+	font-style: italic;
+	padding-bottom: 16px;
+}
+
 a {
 	font-family: 'Montserrat', sans-serif;
 	color: #ba68c8;
@@ -124,7 +131,7 @@ nav {
 	font-size: 22px;
 	cursor: pointer;
 	padding: 16px 8px 16px 8px;
-	transition: 0.4s;
+	transition: 0.3s;
 	background-color: #ee98fb;
 }
 
@@ -173,7 +180,7 @@ nav {
 
 #googlereviewssection .reviewbody .ggl{
 	width: 20px;
-	heigth: 20px;
+	height: 20px;
 	float: right;
 }
 
