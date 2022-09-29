@@ -1,3 +1,7 @@
+:root {
+	--main-box-shadow: 2px 6px 8px grey;
+}
+
 body{
 	margin: 0px;
 	padding: 0px;
@@ -137,7 +141,7 @@ nav {
 
 .button a:hover{
 	transform: scale(1.05);
-	box-shadow: 2px 6px 8px grey;
+	box-shadow: var(--main-box-shadow);
 }
 
 #googlereviewssection #reviews{
@@ -277,7 +281,7 @@ nav {
 
 #whatsappbutton img{
 	width: 60px;
-	box-shadow: 2px 6px 8px grey;
+	box-shadow: var(--main-box-shadow);
 	border-radius: 22%;
 	transition: 0.3s;
 }
@@ -285,13 +289,6 @@ nav {
 #whatsappbutton img:hover{
 	transform: scale(1.5);
 }
-
-
-
-
-
-
-
 
 footer{
 	text-align: center;
@@ -333,3 +330,24 @@ footer .map img {
 	width: 500px;
 }
 
+/* Specific to About.html start */
+
+#team-members-container {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.team-member {
+	width: 300px;
+}
+
+.team-member img {
+	max-width: 300px;
+	box-shadow: var(--main-box-shadow);
+}
+
+.team-member-position {
+	color: grey;
+}
+
+/* Specific to About.html end */
