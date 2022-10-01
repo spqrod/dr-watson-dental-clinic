@@ -1,0 +1,17 @@
+#team-members-container {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.team-member {
+	width: 300px;
+}
+
+.team-member img {
+	max-width: 300px;
+	box-shadow: var(--main-box-shadow);
+}
+
+.team-member-position {
+	color: grey;
+}
