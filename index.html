@@ -3,10 +3,18 @@
 <HTML>
 
 <head>
-	<title>
-		Dr Watson Dental Clinic
-	</title>
+
+	<meta charset="UTF-8">
+
+	<title>Dr Watson Dental Clinic</title>
+
+	<!-- Link styles -->
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
+
+	<!-- Link script -->
+	<script src="scripts/script.js" defer></script>
+
+	<!-- Link fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=
@@ -16,39 +24,68 @@
 
 <body>
 
-<nav>
+<!-- Header -->
+
+<header>
+
+	<!-- Header Logo -->
+
 	<a class="logo" href="index.html"><img src="graphics/logo.jpg" alt="dr-watson-dental-clinic-logo"></a>
-	<a class="menulinks" href="about.html">About</a>			
-	<a class="menulinks" href="contact.html">Contact</a>
-	<a class="menulinks" href="appointment.html">Appointment</a>
-	<a class="menulinks" href="services.html">Services</a>
-</nav>
+
+	<!-- Header hamburger icon -->
+
+	<input type="checkbox" id="hamburger-input-checkbox">
+	<label class="hamburger-icon" for="hamburger-input-checkbox">
+		<span class="hamburger-line" id="hamburger-line-1"></span>
+		<span class="hamburger-line" id="hamburger-line-2"></span>
+		<span class="hamburger-line" id="hamburger-line-3"></span>
+	</label>
+
+	<!-- Header menu links -->
+
+	<nav>
+		<ul>
+			<li><a class="menulinks" href="about.html">About</a></li>			
+			<li><a class="menulinks" href="contact.html">Contact</a></li>
+			<li><a class="menulinks" href="appointment.html">Appointment</a></li>
+			<li><a class="menulinks" href="services.html">Services</a></li>
+		</ul>
+	</nav>
+	
+</header>
+
+<!-- HERO SECTION -->
 
 <section id="hero-section">
-	<div>
+	<div id="hero-section__info">
 		<h1>Peace begins with a smile.</h1>
-		<p>- Mother Teresa</p>
-
-		<p>Dr Watson Dental Clinic is a trusted family dentist in Lusaka 🇿🇲<br>
-		We are open 7 days a week from 8:00 to 17:00 at Leopards Hill Mall.</p>
+		<p id="quote-author">- Mother Teresa</p>
+		<p>Dr Watson Dental Clinic is a trusted family dentist in Lusaka 🇿🇲.
+			We are open 7 days a week from 8:00 to 17:00 at Leopards Hill Mall.</p>
 		<div class="button">
 			<a href="/appointment">Book Appointment</a>
 		</div>
 		<p>Or call <a href="tel:+260955336825">+260 955 336825</a></p>
 	</div>
-	<div>
-		<img src="./graphics/smiling-woman-2.png">
+	<div id="hero-section__image-container">
+		<img src="graphics/smiling-woman-2.png">
 	</div>
 </section>
 
+<!-- GOOGLE REVIEWS SECTION  -->
+
 <section id="googlereviewssection">
+
 	<h1>What People Say</h1>
+
 	<p class="headline">Real reviews from Google<p>
 
 	<div id="reviews">
 
 		<div class="review">
+
 			<div class="reviewbody">
+
 				<ul>
 					<li><img class="star" src="./graphics/star.svg"></li>
 					<li><img class="star" src="./graphics/star.svg"></li>
@@ -56,12 +93,16 @@
 					<li><img class="star" src="./graphics/star.svg"></li>
 					<li><img class="star" src="./graphics/star.svg"></li>
 				</ul> 
+
 				<img class="ggl" src="./graphics/ggl.svg">
 				<p>The treatment and hospitality is top notch, I highly recommend. The staff are so kind and the processes are very fast,you don't have to worry about being at the clinic too long or being in long queues. You are in good hands at Dr Watson Dental Clinic.</p>
+			
 			</div>
+
 			<div class="triangle"></div>
 			<img class="photo" src="./graphics/photo-nm.png">
 			<p class="name">Nchimunya Moonga</p>
+
 		</div>
 
 		<div class="review">
@@ -152,72 +193,113 @@
 
 </section>
 
-<section id="insurances-section">
+<!-- INSURANCES SECTION  -->
+
+<section>
+
 	<h1>Insurances</h1>
-	<p>You are very welcome to use your dental benefits from NHIMA, SES, Liberty and Medlink medical insurances.</p>
-	<div>
-		<img src="./graphics/nhima.jpeg" alt="NHIMA logo">
-		<img src="./graphics/ses.jpg" alt="SES logo">
-		<img src="./graphics/medlink.jpg" alt="MedLink logo">
-		<img src="./graphics/liberty.jpeg" alt="Liberty logo">
+
+	<p>You are very welcome to use your dental benefits from 
+		NHIMA, SES, Liberty and Medlink medical insurances.</p>
+
+	<div id="insurances-container">
+
+		<img class="insurance-logo" src="./graphics/nhima.jpeg" alt="NHIMA logo">
+		<img class="insurance-logo" src="./graphics/ses.jpg" alt="SES logo">
+		<img class="insurance-logo" src="./graphics/medlink.jpg" alt="MedLink logo">
+		<img class="insurance-logo" src="./graphics/liberty.jpeg" alt="Liberty logo">
+	
 	</div>
 
 </section>
 
-<section id="dentalservices">
+<!-- 
+	------------------------------
+	Dental Services Section 
+	------------------------------
+-->
+
+<section>
+
 	<h1>Dental Services</h1>
+
 	<p class="headline">Here's how we can help you</p>
+
 	<div>
-		<div class="service">
+
+		<div>
 			<h3>Scaling and Polishing</h3>
 			<p>This is deep dental cleaning. If done every 6 months will help prevent many dental diseases.</p>
 		</div>
-		<div class="service">
+
+		<div>
 			<h3>Fillings</h3>
 			<p>We use a tooth coloured material to fill the cavity of a damaged tooth. This will return its form and function.</p>
 		</div>
-		<div class="service">
+
+		<div>
 			<h3>Extractions</h3>
 			<p>When the tooth is decayed or damaged beyond repair, or in the case of an overcrowded mouth we perform a dental extraction. </p>
 		</div>
-		<div class="service">
+
+		<div>
 			<h3>Crowns</h3>
 			<p>Crowns entirely cover a damaged tooth. It strengthens the tooth, protects it and improves its look and shape. </p>
 		</div>
-		<div class="service">
+
+		<div>
 			<h3>Bridges</h3>
 			<p>Bridges are needed to replace one or more missing teeth. They are cemented to the natural teeth and cover the empty space.</p>
 		</div>
-		<div class="service">
+
+		<div>
 			<h3>Dentures</h3>
 			<p>Dentures are a removable replacement for missing teeth and tissues. </p>
 		</div>
-		<div class="service">
+
+		<div>
 			<h3>Teeth Whitening</h3>
 			<p>Who doesn’t want that bright and impressive smile? 😀</p>
 		</div>
+
 	</div>
-	<div class="button">
+
+	<div class="button" id="dental-services-button">
 		<a href="/services">See All Services</a>
 	</div>
+
 </section>
 
-<section id="youareinsafehands">
+<!-- 
+	------------------------------
+	You Are In Safe Hands Section 
+	------------------------------
+-->
+
+<section>
+
 	<h1>You Are In Safe Hands</h1>
-	<div>
+
+	<div id="safe-hands-container">
+
 		<div>
 			<p>Your healthy and beautiful smile is our top priority.</p>
 			<p>We stand by our values and work and recommend only what’s medically needed. </p>
 			<p>You can be certain that we have your best interests at heart ❤️</p>
+			
 			<div class="button">
 				<a href="/appointment">Book Your Appointment</a>
 			</div>
+
 		</div>
-		<div>
-			<img src="./graphics/dentists-at-work.jpg">
+
+		<div id="safe-hands-image-container">
+			<img class="global-image-preset" id="safe-hands-image" 
+				src="./graphics/dentists-at-work.jpg">
 		</div>
 		
 	</div>
+
 </section>
 
 <!-- TO DO  -->
@@ -225,11 +307,28 @@
 	<h1>Our Blog</h1>
 </section> -->
 
-<a id="whatsappbutton" href="https://wa.me/260955336825"><img src="./graphics/whatsapp.png"></a>
+<!-- 
+	------------------------------
+	Floating WhatsApp Button
+	------------------------------
+-->
+
+<a id="whatsapp-button" href="https://wa.me/260955336825">
+	<img src="./graphics/whatsapp.png">
+</a>
+
+<!-- 
+	------------------------------
+	Footer 
+	------------------------------
+-->
 
 <footer>
+
 	<div class="flex-container">
+
 		<div class="contacts">
+
 			<h1>Contacts</h1>
 			<p><a class="contact-text-link" href="tel:+260955336825"><img class="contact-icon" src="./graphics/phone.png"> +260 955 336825</a></p>
 			<p><a class="contact-text-link" href="tel:+260950107838"><img class="contact-icon" src="./graphics/landline.png"> +260 950 107838</a></p>
@@ -238,14 +337,19 @@
 			<a class="social" href="https://wa.me/260955336825"><img class="social-image" src="./graphics/whatsapp.png"></a>
 			<a class="social" href="https://wa.me/260955336825"><img class="social-image" src="./graphics/facebook.png"></a>
 			<a class="social" href="https://wa.me/260955336825"><img class="social-image" src="./graphics/instagram.png"></a>
+		
 		</div>
+
 		<div class="map">
 			<img src="./graphics/map.jpg">
 		</div>
+
 	</div>
+
 	<p>Copyright © 2022 Dr Watson Dental Clinic</p>
+
 </footer>
 
 </body>
-</HTML>
 
+</HTML>

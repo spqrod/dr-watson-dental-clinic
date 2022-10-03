@@ -1,5 +1,20 @@
+/*	
+	------------------------------
+	Global 
+	------------------------------
+*/
+
+/* Variables  */
+
 :root {
-	--main-box-shadow: 2px 6px 8px grey;
+	--global-box-shadow: 2px 6px 8px grey;
+	--global-horizontal-padding: 6vw;
+	--global-vertical-padding: 6vw;
+	--global-transition: 0.2s ease-out;
+	--global-border-radius: 0;
+	--global-transform-scale: 1.1;
+	--global-transform: translateY(-12px);
+	--min-width-laptop-breakpoint: 768px;
 }
 
 body{
@@ -7,9 +22,19 @@ body{
 	padding: 0px;
 }
 
-nav, section, footer {
-	padding: 0px 6vw 6vh 6vw;
+header, section, footer {
+	padding: 
+		0px 
+		var(--global-horizontal-padding) 
+		var(--global-vertical-padding)
+		var(--global-horizontal-padding);
 }
+
+/*	
+	------------------------------
+	Global Typography 
+	------------------------------
+*/
 
 h1, h2, h3 {
 	color: black;
@@ -48,88 +73,28 @@ p, input, label {
 	padding-bottom: 16px;
 }
 
+
 a {
 	font-family: 'Montserrat', sans-serif;
 	color: #ba68c8;
 	font-size: 18px;
 }
 
-nav {
-	background-color: white;
-	position: sticky;
-	top: 0px;
-	height: 10vh;
-	z-index: 1;
-	padding-bottom: 0;
-}
-
-.logo img{
-	height: 10vh;
-}
-
-.menulinks {
-	width: 160px;
-	float: right;
-	line-height: 10vh;
-	text-decoration: none;
-	color: black;
-	text-align: center;
-	font-size: 22px;
-}
-
-.menulinks:hover{
-	background-color: black;
-	color: white;
-}
-
-#hero-section {
-	display: flex;
-	height: 90vh;
-	align-items: center;
-	justify-content: center;
-	background-image: linear-gradient(white,#bbb5c3);
-	padding-bottom: 0;
-}
-
-#hero-section div:first-child{
-	padding: 4%;
-	flex-basis: 42%;
-}
-
-#hero-section div:last-child{
-	flex-basis: 50%;
-	align-self: flex-end;
-}
-
-#hero-section img{
-	width: 100%;
-
-	/*	Fix for the image displaying 4 px higher than the down border of the section. 
-	Reason for it displaying in such way is unknown. I tried setting padding and margin to 0, but unsuccessful.*/
-
-	position: relative;
-	bottom: -4px;
-	z-index: 0;
-}
-
-#hero-section div h1 {
-	text-align: center;
-}
-
-#hero-section p {
-	text-align: center;
-}
-
-#hero-section p:first-of-type {
-	text-align: right;
-}
+/*	
+	------------------------------
+	Global Button 
+	------------------------------
+*/
 
 .button{
 	display: flex;
 	align-items: center;
 	justify-content: center;	
+	padding: 16px 0;
 }
+
 .button a{
+	background-color: #edadf7;
 	font-family: 'Montserrat';
 	color: black;
 	font-weight: bold;
@@ -137,14 +102,218 @@ nav {
 	font-size: 22px;
 	cursor: pointer;
 	padding: 16px 8px 16px 8px;
-	transition: 0.3s;
-	background-color: #ee98fb;
+	transition: var(--global-transition);
+	border-radius: var(--global-border-radius);
 }
 
 .button a:hover{
-	transform: scale(1.05);
-	box-shadow: var(--main-box-shadow);
+	transform: var(--global-transform);
+	box-shadow: var(--global-box-shadow);
+	color: white;
+	background-color: #d16ae0;
 }
+
+/*	
+	------------------------------
+	Global Image 
+	------------------------------
+*/
+
+.global-image-preset {
+	box-shadow: var(--global-box-shadow);
+	border-radius: var(--global-border-radius);
+	transition: var(--global-transition);
+	
+}
+
+.global-image-preset:hover {
+	transform: var(--global-transform);
+}
+
+/*	
+	------------------------------
+	Header 
+	------------------------------
+*/
+
+header {
+	position: sticky;
+	top: 0px;
+	height: 10vh;
+	z-index: 1;
+	padding-bottom: 0;
+	background-color: rgb(255, 255, 255);
+}
+
+.logo img{
+	height: 100%;
+}
+
+header nav {
+	max-height: 0;
+	overflow: hidden;
+}
+
+.hamburger-icon {
+    float: right;
+    padding: 30px 0;
+}
+
+.hamburger-line {
+    background: black;
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+    transition: var(--global-transition);
+}
+
+#hamburger-line-1 {
+    top: -5px;
+
+}
+#hamburger-line-3{
+    top: 5px;
+}
+
+#hamburger-input-checkbox {
+    display: none;
+}
+
+#hamburger-input-checkbox:checked ~ nav{
+    max-height: none;
+	transition: var(--global-transition);
+    height: 90vh;
+	position: absolute;
+	left: 0;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	background-color: #c3b4c6;
+}
+
+#hamburger-input-checkbox:checked ~ .hamburger-icon #hamburger-line-2 {
+    background: transparent;
+}
+#hamburger-input-checkbox:checked ~ .hamburger-icon #hamburger-line-1 {
+    transform: rotate(45deg);
+    top: 2px;
+}
+#hamburger-input-checkbox:checked ~ .hamburger-icon #hamburger-line-3 {
+    transform: rotate(-45deg);
+    top: -2px;
+}
+
+header nav ul {
+	list-style: none;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	text-align: center;
+}
+
+header nav ul li {
+	width: 100%;
+}
+
+nav ul a {
+	display: block;
+	text-decoration: none;
+	color: black;
+	font-size: 18px; 
+	padding: 0 6px;
+	line-height: 10vh;
+}
+
+nav a:hover{
+	background-color: black;
+	color: white;
+}
+
+/* Responsiveness */
+@media screen and (min-width: 768px) {
+    header nav{
+        max-height: none;
+        float: right;
+    }
+	
+	header nav ul li {
+		width: auto;
+	}
+
+    .hamburger-icon{
+        display: none;
+    }
+}
+
+/*	
+	------------------------------
+	Hero Section 
+	------------------------------
+*/
+
+#hero-section {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	height: 90vh;
+	background-image: linear-gradient(white,#bbb5c3);
+	padding-bottom: 0;
+}
+
+#hero-section__info {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	text-align: center;
+}
+
+#quote-author {
+	margin: 0;
+	text-align: right;
+}
+
+#hero-section__image-container {
+	/* Without setting height to any value (1 px in this case)
+	the flex property doesn't work properly for some reason */
+	height: 1px;
+	flex: 1 1 auto;
+	display: flex;
+	justify-content: center;
+}
+
+#hero-section__image-container img {
+	height: 100%;
+}
+
+/* Responsiveness */
+
+@media screen and (min-width: 768px) {
+	
+	#hero-section {
+		flex-direction: row;
+		align-items: center;
+	}
+
+	#hero-section__info {
+		width: 50%;
+	}
+	
+	#hero-section__image-container {
+		height: 80%;
+		width: 50%;
+		align-self: flex-end;
+	}
+}
+
+/*	
+	------------------------------
+	Google Reviews Section 
+	------------------------------
+*/
 
 #googlereviewssection #reviews{
 	display: flex;
@@ -154,10 +323,10 @@ nav {
 }
 
 #googlereviewssection .review {
-	transition: 0.5s;
+	transition: var(--global-transition);
 }
 #googlereviewssection .review:hover {
-	transform: translate(0,-12px);
+	transform: var(--global-transform);
 }
 
 #googlereviewssection .reviewbody{
@@ -179,12 +348,12 @@ nav {
 	display: inline;
 }
 
-#googlereviewssection .reviewbody .star{
+.star{
 	width: 20px;
 	height: 20px;
 }
 
-#googlereviewssection .reviewbody .ggl{
+.ggl{
 	width: 20px;
 	height: 20px;
 	float: right;
@@ -192,7 +361,7 @@ nav {
 
 #googlereviewssection .reviewbody p{
 	font-family: 'Open Sans';
-	font-size: 14px;
+	font-size: 16px;
 }
 
 #googlereviewssection .review .triangle {
@@ -205,7 +374,7 @@ nav {
 	left: 20px;
 }
 
-#googlereviewssection .review .photo{
+.photo{
 	width: 45px;
 	height: 45px;
 	position: relative;
@@ -223,7 +392,14 @@ nav {
 	vertical-align: middle;
 }
 
-#insurances-section div {
+
+/*	
+	------------------------------
+	Insurances Section 
+	------------------------------
+*/
+
+#insurances-container {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
@@ -233,64 +409,77 @@ nav {
 	text-align: center;
 }
 
-#insurances-section img {
-	max-height: 120px;
-	transition: 0.5s;
+.insurance-logo {
+	width: 150px;
+	object-fit: contain;
+	transition: var(--global-transition);
 }
 
-#insurances-section img:hover {
-	transform: translate(0,-12px);
+.insurance-logo:hover {
+	transform: var(--global-transform);
 }
 
-#dentalservices .button{
+/*	
+	------------------------------
+	Dental Services Section 
+	------------------------------
+*/
+
+#dental-services-button {
 	justify-content: flex-end;
 }
 
-#youareinsafehands>div{
+/*	
+	------------------------------
+	You Are In Safe Hands Section 
+	------------------------------
+*/
+
+#safe-hands-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-wrap: wrap;
 }
 
-#youareinsafehands>div>div{
-	flex: 1;
+#safe-hands-image {
+	max-width: 300px;
 }
 
-#youareinsafehands>div>div:last-child{
-	display: flex;
-	justify-content: center;
-	align-items: center;
+@media screen and (min-width: 768px) {
+	#safe-hands-container {
+		flex-wrap: nowrap;
+	}
 }
 
-#youareinsafehands img{
-	width: 300px;
-}
+/*	
+	------------------------------
+	Floating WhatsApp Button
+	------------------------------
+*/
 
-
-
-
-
-
-
-
-
-
-#whatsappbutton{
+#whatsapp-button {
 	position: sticky;
 	bottom: 6vh;
 	left: calc(94vw - 60px);
 }
 
-#whatsappbutton img{
+#whatsapp-button img{
 	width: 60px;
-	box-shadow: var(--main-box-shadow);
+	box-shadow: var(--global-box-shadow);
 	border-radius: 22%;
-	transition: 0.3s;
+	transition: var(--global-transition);
 }
 
-#whatsappbutton img:hover{
-	transform: scale(1.5);
+#whatsapp-button img:hover{
+	transform: var(--global-transform);
 }
+
+/*	
+	------------------------------
+	Footer 
+	------------------------------
+*/
 
 footer{
 	text-align: center;
@@ -326,16 +515,17 @@ footer .contacts, .map {
 .social-image {
 	width: 40px;
 	padding: 0 8px 0 8px;
+	transition: var(--global-transition);
+}
+
+.social-image:hover {
+	transform: var(--global-transform);
+	box-shadow: var(--global-box-shadow);
 }
 
 footer .map img {
 	width: 500px;
 }
-
-
-
-
-
 
 
 
