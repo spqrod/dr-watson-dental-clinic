@@ -142,7 +142,7 @@ header {
 	height: 10vh;
 	z-index: 1;
 	padding-bottom: 0;
-	background-color: rgb(255, 255, 255);
+	background-color: rgb(255, 255, 255);	
 }
 
 .logo img{
@@ -156,7 +156,7 @@ header nav {
 
 .hamburger-icon {
     float: right;
-    padding: 30px 0;
+	padding-top: 27px;
 }
 
 .hamburger-line {
@@ -185,11 +185,13 @@ header nav {
 	transition: var(--global-transition);
     height: 90vh;
 	position: absolute;
+	top: 10vh;
 	left: 0;
 	width: 100vw;
 	display: flex;
 	justify-content: center;
-	background-color: #c3b4c6;
+	background-image: linear-gradient(white,#bbb5c3);
+
 }
 
 #hamburger-input-checkbox:checked ~ .hamburger-icon #hamburger-line-2 {
@@ -443,7 +445,8 @@ nav a:hover{
 }
 
 #safe-hands-image {
-	max-width: 300px;
+	max-width: 350px;
+	margin: 16px;
 }
 
 @media screen and (min-width: 768px) {
@@ -488,11 +491,12 @@ footer{
 	padding-bottom: 16px;
 }
 
-footer .flex-container{
+#footer-container{
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
+	gap: 16px;
 }
 
 footer h1{
@@ -520,11 +524,10 @@ footer .contacts, .map {
 
 .social-image:hover {
 	transform: var(--global-transform);
-	box-shadow: var(--global-box-shadow);
 }
 
 footer .map img {
-	width: 500px;
+	width: 50vw;
 }
 
 
