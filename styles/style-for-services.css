@@ -1,12 +1,17 @@
+/*	
+	------------------------------
+	Hero Section 
+	------------------------------
+*/
+
 #services-hero-section {
     height: 90vh;
-    background: rgba(98, 98, 98, 0.521) url("../graphics/happy-patient.jpg");
+    background: rgba(69, 69, 69, 0.236) url("../graphics/happy-patient.jpg");
     background-blend-mode: darken;
+    background-position: center;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
-
 }
 
 #services-hero-section * {
@@ -14,19 +19,30 @@
     text-align: center;
 }
 
-.service__description {
-    width: 80%;
-}
+/*	
+	------------------------------
+	Services 
+	------------------------------
+*/
 
-.service__animation {
-    position: absolute;
-    right: 30px;
-    width: 20%;
-}
-
-.service__description-and-animation {
+.service-description-and-animation {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 }
+
+.service-animation {
+    flex-shrink: 0;
+    flex-basis: 200px;
+    margin: -40px;
+    margin-bottom: auto;
+}
+
+@media screen and (min-width: 768px) {
+    .service-description-and-animation {
+        flex-wrap: nowrap;
+    }
+}
+
 

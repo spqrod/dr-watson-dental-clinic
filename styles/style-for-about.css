@@ -1,17 +1,39 @@
 #team-members-container {
 	display: flex;
 	justify-content: space-evenly;
+	flex-wrap: wrap;
+	gap: 32px;
 }
 
 .team-member {
-	width: 300px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	background-color: rgba(212, 211, 214, 0.336);
+	padding: 24px;
+
+}
+
+.team-member * {
+	flex-basis: 100%;
+	margin: 4px;
 }
 
 .team-member img {
-	max-width: 300px;
-	box-shadow: var(--main-box-shadow);
+	max-width: 80%;
+	box-shadow: 2px 6px 8px grey;;
 }
 
 .team-member-position {
 	color: grey;
+}
+
+@media screen and (min-width: 768px) {
+	#team-members-container {
+		flex-wrap: nowrap;
+	}
+
+	.team-member img {
+		max-width: 100%;
+	}
 }
