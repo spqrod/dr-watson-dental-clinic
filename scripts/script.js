@@ -53,14 +53,14 @@ class header extends HTMLElement {
 
             <ul>
 
-                <li><a class="menulinks" href="https://drwatsondental.com/about.html/">About</a></li>			
-                <li><a class="menulinks" href="https://drwatsondental.com/contact.html/">Contact</a></li>
-                <li><a class="menulinks" href="https://drwatsondental.com/appointment.html/">Appointment</a></li>
-                <li><a class="menulinks" href="https://drwatsondental.com/services.html/">Services</a></li>
+                <li><a class="menulinks" href="https://drwatsondental.com/about/">About</a></li>			
+                <li><a class="menulinks" href="https://drwatsondental.com/contact/">Contact</a></li>
+                <li><a class="menulinks" href="https://drwatsondental.com/appointment/">Appointment</a></li>
+                <li><a class="menulinks" href="https://drwatsondental.com/services/">Services</a></li>
                 <li class="phone-and-whatsapp-in-nav"><a href="tel:+260955336825">Call +260 955 336825</a></li>
                 <li class="phone-and-whatsapp-in-nav"><a class="social" href="https://wa.me/260955336825">
                     <img class="social-image" src="${urlPrefix}graphics/whatsapp.png"></a></li>
-            
+        
             </ul>
         
         </nav>
@@ -112,7 +112,7 @@ class footer extends HTMLElement {
                 <p><a class="contact-text-link" href="tel:+260950107838"><img class="contact-icon" src="${urlPrefix}graphics/landline.png"> +260 950 107838</a></p>
                 <p><img class="contact-icon" src="${urlPrefix}graphics/map.png"> Leopards Hill Mall, Leopards Hill Rd, Bauleni, Lusaka, Zambia</p>
                 <p><img class="contact-icon" src="${urlPrefix}graphics/clock.png"> Monday – Sunday<br>8:00 – 17:00</p>
-                <a class="social" href="https://wa.me/260955336825"><img class="social-image" src="${urlPrefix}graphics/whatsapp.png"></a>
+                <a class="social" href="https://wa.me/260955336825/"><img class="social-image" src="${urlPrefix}graphics/whatsapp.png"></a>
                 <a class="social" href="https://facebook.com/drwatsondental/"><img class="social-image" src="${urlPrefix}graphics/facebook.png"></a>
                 <a class="social" href="https://instagram.com/drwatsondental/"><img class="social-image" src="${urlPrefix}graphics/instagram.png"></a>
             
