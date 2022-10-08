@@ -13,14 +13,22 @@ class header extends HTMLElement {
         super();
     }
     connectedCallback() {
-        let urlPrefix;
 
-        const htmlFileName = 
-            window.location.pathname.slice(1);
+        // This is used to automatically insert the right URL prefix depending on the relative resourse position. 
+        // E. g. index.html was located in the root folder ./ , but other pages were in the pages folder ./pages.
+        // This required dynamic prefixing. 
+        // All of the pages were moved in the root, so no need in the prefixes.
 
-        if (htmlFileName == "index.html") 
-            urlPrefix = "./"; else 
-            urlPrefix = "../";
+        let urlPrefix = "./";
+
+        // const htmlFileName = 
+        //     window.location.pathname.slice(1);
+
+        // if (htmlFileName == "index.html") 
+        //     urlPrefix = "./"; else 
+        //     urlPrefix = "../";
+
+
         this.innerHTML = 
         `
         <header>
@@ -78,14 +86,20 @@ class footer extends HTMLElement {
         super();
     }
     connectedCallback() {
-        let urlPrefix;
-        
-        const htmlFileName = 
-            window.location.pathname.slice(1);
 
-        if (htmlFileName == "index.html")
-            urlPrefix = "./"; else
-            urlPrefix = "../";
+        // This is used to automatically insert the right URL prefix depending on the relative resourse position. 
+        // E. g. index.html was located in the root folder ./ , but other pages were in the pages folder ./pages.
+        // This required dynamic prefixing. 
+        // All of the pages were moved in the root, so no need in the prefixes.
+
+        let urlPrefix = "./";
+        
+        // const htmlFileName = 
+        //     window.location.pathname.slice(1);
+
+        // if (htmlFileName == "index.html")
+        //     urlPrefix = "./"; else
+        //     urlPrefix = "../";
 
         this.innerHTML = `
         <footer>
