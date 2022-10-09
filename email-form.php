@@ -40,8 +40,13 @@ $mail->addAddress("rodionvh@gmail.com", "Recepient Name");
 
 $mail->isHTML(true);
 
-$mail->Subject = "This email was sent from our website using the contact form";
-$mail->Body = "<p>Do not reply to this email as it will not be delivered. Instead, contact the patient using the details they provided below (email or phone).<br><br>Name: $name.<br><br>Email: $email.<br><br>Phone: $phone.<br><br>Message: $message.</p>";
+$mail->Subject = "This email was sent from drwatsondental.com/contact using the contact form";
+$mail->Body = 
+  "<p>Do not reply to this email as it will not be delivered. Instead, contact the patient using the details they provided below (email or phone).<br><br>
+  Name: $name<br><br>
+  Email: $email<br><br>
+  Phone: $phone<br><br>
+  Message: $message</p>";
 
 try {
     $mail->send();
