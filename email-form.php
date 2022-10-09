@@ -8,6 +8,11 @@ require '/PHPMailer-master/src/Exception.php';
 require '/PHPMailer-master/src/PHPMailer.php';
 require '/PHPMailer-master/src/SMTP.php';
 
+$to = "rodionvh@gmail.com";
+$nameto = "nameto";
+$subject = "subject";
+$message = "message";
+
 function sendmail($to,$nameto,$subject,$message,$altmess)  {
     $from  = "care@drwatsondetal.com"; 
     $namefrom = "Your Name";
