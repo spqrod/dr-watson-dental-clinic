@@ -216,10 +216,17 @@
 	------------------------------
 */
 
+/* The following prevents the overflow of Whatsapp Button.
+		Which has its starting animation position 
+		beyond the viewport to the right. */
+body, section {
+	overflow-x: hidden;
+}
+
 @keyframes whatsapp-button-appear-animation {
 	from {
 		transform: 
-			translateX(calc(var(--global-horizontal-padding)*3)) 
+			translateX(200px) 
 			rotate(360deg);
 	}
 	to {
