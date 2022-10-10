@@ -330,6 +330,10 @@ footer {
 	}
 }
 
+#map {
+	height: 100px;
+}
+
 footer h1 {
 	padding-bottom: 24px;
 }
