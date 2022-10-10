@@ -19,6 +19,13 @@
 }
 
 
+
+/*	
+	------------------------------
+	Global Typography 
+	------------------------------
+*/
+
 form {
 	display: flex;
 	flex-direction: column;
@@ -46,7 +53,7 @@ form .checkbox-container input{
 }
 
 form .form__button {
-	height: 30px;
+	height: 50px;
 	width: 200px;
 	padding: 12px;
 	border: 1px solid black;
