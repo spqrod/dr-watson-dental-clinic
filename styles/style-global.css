@@ -302,9 +302,11 @@ nav a:hover{
 	------------------------------
 */
 
+
 footer {
 	text-align: center;
 	background-image: linear-gradient(#ede7f6,#bbb5c3);
+	clear: both;
 }
 
 #footer-container {
@@ -316,19 +318,18 @@ footer {
 }
 
 #contacts, #map {
-	max-width: 100%;
+	width: 100%;
+}
+
+#map {
+	height: 300px;
+	border: 1px solid black;
 }
 
 @media screen and (min-width: 768px) {
 	#contacts, #map {
 		max-width: 40vw;
 	}
-}
-
-#map {
-	height: 300px;
-	width: 600px;
-	border: 1px solid black;
 }
 
 footer h1 {

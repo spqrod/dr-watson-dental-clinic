@@ -119,7 +119,8 @@ class footer extends HTMLElement {
             </div>
 
             <div id="map">
-                <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgB0tY8-gE3cfSSUZ5st4z152lfElE7Yk&callback=initMap"></script>
+                
+                <iframe width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJoWDZn3OPQBkRRH8xyLO8-S0&key=AIzaSyBgB0tY8-gE3cfSSUZ5st4z152lfElE7Yk"></iframe>
 
             </div>
 
@@ -132,22 +133,4 @@ class footer extends HTMLElement {
     }
 }
 
-customElements.define("footer-component", footer);git a
-
-// Initialize and add the map
-function initMap() {
-    // The location of Uluru
-    const uluru = { lat: -25.344, lng: 131.031 };
-    // The map, centered at Uluru
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 4,
-      center: uluru,
-    });
-    // The marker, positioned at Uluru
-    const marker = new google.maps.Marker({
-      position: uluru,
-      map: map,
-    });
-  }
-  
-  window.initMap = initMap;
+customElements.define("footer-component", footer);
