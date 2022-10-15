@@ -155,6 +155,11 @@ em {
 	width: 18px;
 }
 
+.contactTextLink {
+	text-decoration: none;
+	color: black;
+}
+
 .socialMedia {
 	width: 40px;
 	padding: 0 8px 0 8px;
