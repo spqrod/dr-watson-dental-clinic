@@ -21,8 +21,10 @@ class header extends HTMLElement {
 
         let urlPrefix = "./";
 
-        // const htmlFileName = 
-        //     window.location.pathname.slice(1);
+        const htmlFileName = 
+            window.location.pathname.slice(1);
+
+        if (htmlFileName.includes("blog")) urlPrefix = "../"
 
         // if (htmlFileName == "index.html") 
         //     urlPrefix = "./"; else 
@@ -101,9 +103,11 @@ class footer extends HTMLElement {
         // All of the pages were moved in the root, so no need in the prefixes.
 
         let urlPrefix = "./";
-        
-        // const htmlFileName = 
-        //     window.location.pathname.slice(1);
+
+        const htmlFileName = 
+            window.location.pathname.slice(1);
+
+        if (htmlFileName.includes("blog")) urlPrefix = "../"
 
         // if (htmlFileName == "index.html")
         //     urlPrefix = "./"; else
