@@ -5,7 +5,7 @@
 	------------------------------
 */
 
-#hero-section {
+#heroSection {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
@@ -15,20 +15,20 @@
 	padding-top: 0;
 }
 
-#hero-section__info {
+#heroSection-info {
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
+	justify-content: flex-review-body-start;
 	flex-wrap: wrap;
 	text-align: center;
 }
 
-#quote-author {
+#heroSection-quote {
 	margin: 0;
 	text-align: right;
 }
 
-#hero-section__image-container {
+#heroSection-imageContainer {
 	/* Without setting height to any value (1 px in this case)
 	the flex property doesn't work properly for some reason */
 	height: 1px;
@@ -37,7 +37,7 @@
 	justify-content: center;
 }
 
-#hero-section__image-container img {
+#heroSection-image {
 	height: 100%;
 }
 
@@ -45,16 +45,16 @@
 
 @media screen and (min-width: 768px) {
 	
-	#hero-section {
+	#heroSection {
 		flex-direction: row;
 		align-items: center;
 	}
 
-	#hero-section__info {
+	#heroSection-info {
 		width: 50%;
 	}
 	
-	#hero-section__image-container {
+	#heroSection-imageContainer {
 		height: 70%;
 		width: 50%;
 		align-self: flex-end;
@@ -67,7 +67,7 @@
 	------------------------------
 */
 
-#reviews {
+#reviewsContainer {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
@@ -81,7 +81,7 @@
 	transform: var(--global-transform);
 }
 
-.reviewbody {
+.review-body {
 	max-width: 350px;
 	height: 140px;
 	background-color: #efefef;
@@ -90,33 +90,33 @@
 	overflow-y: auto;
 }
 
-.reviewbody ul {
+.review-body ul {
 	display: inline;
 	padding: 0px;
 	list-style-type: none;
 }
 
-.reviewbody li {
+.review-body li {
 	display: inline;
 }
 
-.star {
+.review-body-star {
 	width: 20px;
 	height: 20px;
 }
 
-.ggl {
+.review-body-googleIcon {
 	width: 20px;
 	height: 20px;
 	float: right;
 }
 
-.reviewbody p {
+.review-body p {
 	font-family: 'Open Sans';
 	font-size: 16px;
 }
 
-.review .triangle {
+.review-triangle {
 	width: 0px;
 	height: 0px;
 	border: 12px solid transparent;
@@ -126,7 +126,7 @@
 	left: 20px;
 }
 
-.photo {
+.review-photo {
 	width: 45px;
 	height: 45px;
 	position: relative;
@@ -134,7 +134,7 @@
 	top: 8px;
 }
 
-#googlereviewssection .review>p {
+.review-name {
 	font-family: 'Open Sans';
 	font-weight: bold;
 	height: 45px;
@@ -151,14 +151,10 @@
 	------------------------------
 */
 
-#insurances-container {
+#insurancesContainer {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
-}
-
-#insurances-section p {
-	text-align: center;
 }
 
 .insurance-logo {
@@ -177,7 +173,7 @@
 	------------------------------
 */
 
-#dental-services-button {
+#dentalServices-button {
 	justify-content: flex-end;
 }
 
@@ -187,25 +183,25 @@
 	------------------------------
 */
 
-#safe-hands-container {
+#safeHands {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
 }
 
-#safe-hands-image {
+#safeHands-image {
 	max-width: 80vw;
 	margin: 16px;
 }
 
 @media screen and (min-width: 768px) {
 	
-	#safe-hands-image {
+	#safeHands-image {
 		max-width: 35vw;
 	}
 	
-	#safe-hands-container {
+	#safeHands {
 		flex-wrap: nowrap;
 	}
 }
@@ -217,13 +213,13 @@
 */
 
 /* The following prevents the overflow of Whatsapp Button.
-		Which has its starting animation position 
+		Which has its review-body-starting animation position 
 		beyond the viewport to the right. */
 body, section {
 	overflow-x: hidden;
 }
 
-@keyframes whatsapp-button-appear-animation {
+@keyframes floatingWhatsappButton-appearAnimation {
 	from {
 		transform: 
 			translateX(200px) 
@@ -236,7 +232,7 @@ body, section {
 	}
 }
 
-#whatsapp-button {
+#floatingWhatsappButton {
 	width: 60px;
 	height: 60px;
 	position: sticky;
@@ -244,7 +240,7 @@ body, section {
 	bottom: 6vh;
 	margin-right: var(--global-horizontal-padding);
 
-	animation-name: whatsapp-button-appear-animation;
+	animation-name: floatingWhatsappButton-appearAnimation;
 	animation-timing-function: ease-out;
 	animation-duration: 0.8s;
 	animation-delay: 2s;
@@ -252,14 +248,14 @@ body, section {
 
 }
 
-#whatsapp-button img{
+#floatingWhatsappButton-image{
 	width: 60px;
 	box-shadow: var(--global-box-shadow);
 	border-radius: 22%;
 	transition: var(--global-transition);
 }
 
-#whatsapp-button img:hover{
+#floatingWhatsappButton-image:hover{
 	transform: var(--global-transform);
 }
 

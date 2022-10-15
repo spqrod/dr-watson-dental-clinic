@@ -35,31 +35,39 @@ class header extends HTMLElement {
 
         <!-- Header Logo -->
 
-        <a class="logo" href="https://drwatsondental.com">
-            <img src="${urlPrefix}graphics/logo.jpg" alt="dr-watson-dental-clinic-logo"></a>
+        <a href="https://drwatsondental.com">
+            <img id="logo" src="${urlPrefix}graphics/logo.jpg" alt="dr-watson-dental-clinic-logo"></a>
 
         <!-- Header hamburger icon -->
 
-        <input type="checkbox" id="hamburger-input-checkbox">
-        <label class="hamburger-icon" for="hamburger-input-checkbox">
-            <span class="hamburger-line" id="hamburger-line-1"></span>
-            <span class="hamburger-line" id="hamburger-line-2"></span>
-            <span class="hamburger-line" id="hamburger-line-3"></span>
+        <input type="checkbox" id="hamburger-checkbox">
+        
+        <label id="hamburger" for="hamburger-checkbox">
+            <span class="hamburgerLine" id="hamburgerLine-1"></span>
+            <span class="hamburgerLine" id="hamburgerLine-2"></span>
+            <span class="hamburgerLine" id="hamburgerLine-3"></span>
         </label>
 
         <!-- Header menu links -->
 
-        <nav>
+        <nav id="headerMenu">
 
             <ul>
 
-                <li><a class="menulinks" href="https://drwatsondental.com/about">About</a></li>			
-                <li><a class="menulinks" href="https://drwatsondental.com/contact">Contact</a></li>
-                <li><a class="menulinks" href="https://drwatsondental.com/appointment">Appointment</a></li>
-                <li><a class="menulinks" href="https://drwatsondental.com/services">Services</a></li>
-                <li class="phone-and-whatsapp-in-nav"><a href="tel:+260955336825">Call +260 955 336825</a></li>
-                <li class="phone-and-whatsapp-in-nav"><a class="social" href="https://wa.me/260955336825">
-                    <img class="social-image" src="${urlPrefix}graphics/whatsapp.png"></a></li>
+                <li><a class="headerMenu-link" href="https://drwatsondental.com/about">About</a></li>
+
+                <li><a class="headerMenu-link" href="https://drwatsondental.com/contact">Contact</a></li>
+
+                <li><a class="headerMenu-link" href="https://drwatsondental.com/appointment">Appointment</a></li>
+
+                <li><a class="headerMenu-link" href="https://drwatsondental.com/services">Services</a></li>
+
+                <li><a class="headerMenu-link" href="https://drwatsondental.com/blog">Blog</a></li>
+
+                <li class="headerMenu-phoneAndWhatsapp"><a href="tel:+260955336825">Call +260 955 336825</a></li>
+
+                <li class="headerMenu-phoneAndWhatsapp"><a class="social" href="https://wa.me/260955336825">
+                    <img class="socialMedia" src="${urlPrefix}graphics/whatsapp.png"></a></li>
         
             </ul>
         
@@ -103,22 +111,30 @@ class footer extends HTMLElement {
 
         this.innerHTML = `
         <footer>
-        <div id="footer-container">
 
-            <div id="contacts">
+        <div id="footer">
+
+            <div id="footer-contacts">
 
                 <h1>Contacts</h1>
-                <p><a class="contact-text-link" href="tel:+260955336825"><img class="contact-icon" src="${urlPrefix}graphics/phone.png"> +260 955 336825</a></p>
-                <p><a class="contact-text-link" href="tel:+260950107838"><img class="contact-icon" src="${urlPrefix}graphics/landline.png"> +260 950 107838</a></p>
-                <p><img class="contact-icon" src="${urlPrefix}graphics/map.png"> Leopards Hill Mall, Leopards Hill Rd, Bauleni, Lusaka, Zambia</p>
-                <p><img class="contact-icon" src="${urlPrefix}graphics/clock.png"> Monday – Sunday<br>8:00 – 17:00</p>
-                <a class="social" href="https://wa.me/260955336825/"><img class="social-image" src="${urlPrefix}graphics/whatsapp.png"></a>
-                <a class="social" href="https://facebook.com/drwatsondental/"><img class="social-image" src="${urlPrefix}graphics/facebook.png"></a>
-                <a class="social" href="https://instagram.com/drwatsondental/"><img class="social-image" src="${urlPrefix}graphics/instagram.png"></a>
+
+                    <p><a class="footer-contactText" href="tel:+260955336825"><img class="contactIcon" src="${urlPrefix}graphics/phone.png"> +260 955 336825</a></p>
+
+                    <p><a class="footer-contactText" href="tel:+260950107838"><img class="contactIcon" src="${urlPrefix}graphics/landline.png"> +260 950 107838</a></p>
+
+                    <p><img class="contactIcon" src="${urlPrefix}graphics/map.png"> Leopards Hill Mall, Leopards Hill Rd, Bauleni, Lusaka, Zambia</p>
+
+                    <p><img class="contactIcon" src="${urlPrefix}graphics/clock.png"> Monday – Sunday<br>8:00 – 17:00</p>
+
+                    <a href="https://wa.me/260955336825/"><img class="socialMedia" src="${urlPrefix}graphics/whatsapp.png"></a>
+
+                    <a href="https://facebook.com/drwatsondental/"><img class="socialMedia" src="${urlPrefix}graphics/facebook.png"></a>
+
+                    <a href="https://instagram.com/drwatsondental/"><img class="socialMedia" src="${urlPrefix}graphics/instagram.png"></a>
             
             </div>
 
-            <div id="map">
+            <div id="footer-map">
                 
                 <iframe width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJoWDZn3OPQBkRRH8xyLO8-S0&key=AIzaSyBgB0tY8-gE3cfSSUZ5st4z152lfElE7Yk"></iframe>
 
@@ -126,7 +142,35 @@ class footer extends HTMLElement {
 
         </div>
 
-    <p>Copyright © ${currentYear} Dr Watson Dental Clinic</p>
+        <!-- Footer menu links -->
+
+        <nav id="footerMenu">
+
+            <ul>
+
+                <li><a class="footerMenu-link" href="https://drwatsondental.com/">Home</a></li>
+
+                <li><a class="footerMenu-link" href="https://drwatsondental.com/about">About</a></li>
+
+                <li><a class="footerMenu-link" href="https://drwatsondental.com/contact">Contact</a></li>
+
+                <li><a class="footerMenu-link" href="https://drwatsondental.com/appointment">Appointment</a></li>
+            
+                <li><a class="footerMenu-link" href="https://drwatsondental.com/services">Services</a></li>
+
+                <li><a class="footerMenu-link" href="https://drwatsondental.com/blog">Blog</a></li>
+
+                <li><a class="footerMenu-link" href="https://drwatsondental.com/privacy">Privacy</a></li>
+
+                <li><a class="footerMenu-link" href="https://drwatsondental.com/terms">Terms</a></li>
+
+            </ul>
+        
+        </nav>
+
+    <p>
+        Copyright © ${currentYear} Dr Watson Dental Clinic
+    </p>
 
     </footer>
         `;
