@@ -18,6 +18,11 @@
 	--primary-color-light-2: rgb(252, 233, 255);
 	--primary-color-dark: rgb(228, 124, 244);
 	--gradient: 33deg, var(--primary-color-light-2), 80%, var(--primary-color-light);
+
+}
+
+* {
+	box-sizing: border-box;
 }
 
 body {
@@ -72,10 +77,18 @@ input,
 label, 
 ul, 
 ol, 
-a {
+a,
+span {
 	font-family:  'Montserrat', sans-serif;
 	font-size: 18px;
 	line-height: 1.5;
+}
+
+*::after, *::before {
+	font-family:  'Montserrat', sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+	color: red;
 }
 
 .headline {
@@ -100,15 +113,17 @@ em {
 	------------------------------
 */
 
-.button {
+.button, 
+button {
 	display: flex;
 	align-items: center;
 	justify-content: center;	
 	padding: 16px 0;
 }
 
-.button a {
-	min-width: 200px;
+.button a, 
+button {
+	width: clamp(200px, 300px, 400px);
 	text-align: center;
 	background-color: var(--primary-color-dark);
 	font-family: 'Montserrat';
@@ -117,12 +132,13 @@ em {
 	text-decoration: none;
 	font-size: 22px;
 	cursor: pointer;
-	padding: 16px 8px 16px 8px;
+	padding: 16px 8px;
 	transition: var(--global-transition);
 	border-radius: var(--global-border-radius);
 }
 
-.button a:hover {
+.button a:hover,
+button:hover {
 	transform: var(--global-transform);
 	box-shadow: var(--global-box-shadow);
 	color: white;
@@ -162,7 +178,7 @@ em {
 
 .socialMedia {
 	width: 40px;
-	padding: 0 8px 0 8px;
+	margin: 0 8px;
 	transition: var(--global-transition);
 }
 
@@ -188,8 +204,8 @@ header {
 }
 
 #logo {
-	height: 8vh;
-	padding: 1vh 0;
+	height: 10vh;
+	/* padding: 1vh 0; */
 }
 
 #headerMenu {

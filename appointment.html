@@ -19,10 +19,12 @@
 
 	<!-- Link styles -->
 	<link rel="stylesheet" type="text/css" href="./styles/style-global.css">
-	<link rel="stylesheet" type="text/css" href="./styles/style-for-appointment.css">
+	<link rel="stylesheet" type="text/css" href="./styles/style-for-contact-and-appointment.css">
 
 	<!-- Link script -->
 	<script src="./scripts/script.js" defer></script>
+	<script src="./scripts/script-for-contact.js" defer></script>
+	<script src="./scripts/script-for-appointment.js" defer></script>
 
 	<!-- Link fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,6 +66,63 @@
 		</div>
 
         </section>
+
+<!-------------------------------------
+	Form
+-------------------------------------->
+
+		<section>
+
+			<form method="post" action="email-form.php"> 
+	
+				<h3>Book Appointment Online</h3>
+
+				<p class="headline form-headline">
+					Please be advised that the chosen time might not be available. <br>We will contact you to confirm.
+				</p>
+
+				<div class="form-inputContainer">
+
+					<input type="date" name="date" id="date" class="form-input">
+					
+				</div>
+
+				<div class="form-inputContainer" id="form-inputContainer-time" errorMessage = "Please choose time between 08:00 and 16:30">
+
+					<input type="time" name="time" id="time" class="form-input" min="9:00" max="16:30">
+
+				</div>
+
+				<div class="form-inputContainer">
+	
+					<input type="text" name="name" id="name" placeholder="Name" class="form-input" pattern="[a-zA-Z]*" minlength="1" maxlength="30">
+	
+				</div>			
+	
+				<div class="form-inputContainer" errorMessage = "Please enter a valid phone number">
+	
+					<input type="tel" name="phone" id="phone" placeholder="Phone Number" class="form-input" pattern="[+]?[\d\s()-]*" minlength="6" maxlength="30" required>
+	
+				</div>
+	
+				<div class="form-inputContainer" errorMessage="Please enter your message">
+	
+					<input type="text" name="message" id="message" placeholder="Message" class="form-input">
+	
+				</div>
+				
+				<div class="form-checkboxContainer">
+	
+					<input type="checkbox" class="form-checkbox" required>
+					<label for="checkbox">I have read and agree to the Terms and Conditions and Privacy Policy</label>
+	
+				</div>
+	
+				<button type="submit" class="form-button">Submit</button>
+		
+			</form>
+	
+		</section>
 
 
 <!--------------------------------
