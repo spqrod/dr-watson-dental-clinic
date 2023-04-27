@@ -1,0 +1,159 @@
+
+/*	
+	------------------------------
+	Header 
+	------------------------------
+*/
+
+header {
+	position: sticky;
+	top: 0px;
+	height: 10vh;
+	z-index: 1;
+	padding-bottom: 0;
+	background-color: white;
+	box-shadow: var(--global-box-shadow);
+	padding-top: 0;
+}
+
+#logo {
+	height: 10vh;
+	/* padding: 1vh 0; */
+}
+
+#headerMenu {
+	max-height: 0;
+	overflow: hidden;
+	transition: var(--global-transition);
+}
+
+#headerMenu ul {
+	padding: 0;
+	margin: 0;
+}
+
+#headerMenu ul {
+	list-style: none;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	text-align: center;
+}
+
+#headerMenu ul li {
+	width: 100%;
+}
+
+.headerMenu-link {
+	display: block;
+	text-decoration: none;
+	color: black;
+	font-size: 18px; 
+	padding: 0 6px;
+	line-height: 10vh;
+	transition: var(--global-transition);
+}
+
+.headerMenu-link:hover{
+	/* background-color: black; */
+	/* color: white; */
+	font-weight: 700;
+	text-decoration: underline;
+}
+
+#hamburger {
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+
+	/* Increase the icon size to make the tappable area bigger.
+		This element itself is not visible */
+	height: 50px;
+	width: 50px;
+
+	/* Shift the icon to the right with a small offset the make the tappable area to the right */
+	right: calc(var(--global-horizontal-padding) - 12.5px);
+}
+
+.hamburgerLine {
+    background: black;
+    display: block;
+    position: absolute;
+
+	/* Shift the lines to align with --global-horizontal-padding.
+		This came to be because of the shift of .hamburger 
+		to make the tappable are bigger */
+	right: 12.5px;
+
+    height: 2px;
+    width: 25px;
+    transition: var(--global-transition);
+}
+
+#hamburgerLine-1 {
+	top: var(--hamburgerLine-start-position);
+}
+
+#hamburgerLine-2 {
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+#hamburgerLine-3{
+	bottom: var(--hamburgerLine-start-position);
+}
+
+#hamburger-checkbox {
+    display: none;
+}
+
+#hamburger-checkbox:checked ~ #headerMenu{
+    max-height: none;
+    height: 90vh;
+	position: absolute;
+	top: 10vh;
+	left: 0;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	background-image: linear-gradient(white,#bbb5c3);
+
+}
+
+#hamburger-checkbox:checked ~ #hamburger #hamburgerLine-2 {
+    background: transparent;
+}
+#hamburger-checkbox:checked ~ #hamburger #hamburgerLine-1 {
+    transform: rotate(45deg);
+    top: var(--hamburgerLine-end-position);
+}
+#hamburger-checkbox:checked ~ #hamburger #hamburgerLine-3 {
+    transform: rotate(-45deg);
+    bottom: var(--hamburgerLine-end-position);
+}
+
+/* Responsiveness */
+@media screen and (min-width: 768px) {
+    #headerMenu {
+        max-height: none;
+        float: right;
+    }
+	
+	#headerMenu ul li {
+		width: auto;
+	}
+
+	.headerMenu-phoneAndWhatsapp {
+		display: none;
+	}
+
+
+    #hamburger{
+        display: none;
+    }
+}
+
