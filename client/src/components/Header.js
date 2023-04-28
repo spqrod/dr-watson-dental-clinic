@@ -1,32 +1,44 @@
 import "../styles/header.css";
 import logo from "../images/logo.jpg";
 import whatsAppIcon from "../images/whatsapp.png";
+import { Link } from "react-router-dom";
 
 function Header() {
     return (
         <header>
-            <a href="https://drwatsondental.com">
+            <Link to="/">
                 <img id="logo" src={logo} alt="dr-watson-dental-clinic-logo" />
-            </a>
+            </Link>
             <input type="checkbox" id="hamburger-checkbox" />
-
             <label id="hamburger" for="hamburger-checkbox">
                 <span class="hamburgerLine" id="hamburgerLine-1"></span>
                 <span class="hamburgerLine" id="hamburgerLine-2"></span>
                 <span class="hamburgerLine" id="hamburgerLine-3"></span>
             </label>
-
             <nav id="headerMenu">
                 <ul>
-                    <li><a class="headerMenu-link" href="https://drwatsondental.com/about">About</a></li>
-                    <li><a class="headerMenu-link" href="https://drwatsondental.com/contact">Contact</a></li>
-                    <li><a class="headerMenu-link" href="https://drwatsondental.com/appointment">Appointment</a></li>
-                    <li><a class="headerMenu-link" href="https://drwatsondental.com/services">Services</a></li>
-                    <li><a class="headerMenu-link" href="https://drwatsondental.com/blog">Blog</a></li>
-                    <li class="headerMenu-phoneAndWhatsapp"><a href="tel:+260955336825">Call +260 955 336825</a></li>
-                    <li class="headerMenu-phoneAndWhatsapp"><a class="social" href="https://wa.me/260955336825">
-                        <img class="socialMedia" src={whatsAppIcon} />
-                        </a>
+                    <li>
+                        <Link class="headerMenu-link" to="/appointment">Appointment</Link>
+                    </li>
+                    <li>
+                        <Link class="headerMenu-link" to="/services">Services</Link>
+                    </li>
+                    <li>
+                        <Link class="headerMenu-link" to="/contact">Contact</Link>
+                    </li>
+                    <li>
+                        <Link class="headerMenu-link" to="/about">About</Link>
+                    </li>
+                    <li>
+                        <Link class="headerMenu-link" to="/blog">Blog</Link>
+                    </li>
+                    <li class="headerMenu-phoneAndWhatsapp">
+                        <Link to="tel:+260955336825">Call +260 955 336825</Link>
+                    </li>
+                    <li class="headerMenu-phoneAndWhatsapp">
+                        <Link class="social" to="https://wa.me/260955336825">
+                            <img class="socialMedia" src={whatsAppIcon} />
+                        </Link>
                     </li>
                 </ul>
             </nav>

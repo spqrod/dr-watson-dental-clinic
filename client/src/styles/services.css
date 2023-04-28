@@ -1,12 +1,6 @@
-/*	
-	------------------------------
-	Hero Section 
-	------------------------------
-*/
-
 #services-hero-section {
     height: 90vh;
-    background: rgba(69, 69, 69, 0.236) url("../graphics/happy-patient.jpg");
+    background: rgba(69, 69, 69, 0.236) url("../images/happy-patient.jpg");
     background-blend-mode: darken;
     background-position: center;
     background-size: cover;

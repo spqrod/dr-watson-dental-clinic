@@ -7,8 +7,6 @@ import whatsAppIcon from "../images/whatsapp.png";
 import facebookIcon from "../images/facebook.png";
 import instagramIcon from "../images/instagram.png";
 
-
-
 function Footer() {
     const currentYear = new Date().getFullYear();
     return (
@@ -31,17 +29,17 @@ function Footer() {
             <nav id="footerMenu">
                 <ul>
                     <li><a class="footerMenu-link" href="https://drwatsondental.com/">Home</a></li>
-                    <li><a class="footerMenu-link" href="https://drwatsondental.com/about">About</a></li>
-                    <li><a class="footerMenu-link" href="https://drwatsondental.com/contact">Contact</a></li>
                     <li><a class="footerMenu-link" href="https://drwatsondental.com/appointment">Appointment</a></li>
                     <li><a class="footerMenu-link" href="https://drwatsondental.com/services">Services</a></li>
+                    <li><a class="footerMenu-link" href="https://drwatsondental.com/contact">Contact</a></li>
+                    <li><a class="footerMenu-link" href="https://drwatsondental.com/about">About</a></li>
                     <li><a class="footerMenu-link" href="https://drwatsondental.com/blog">Blog</a></li>
-                    <li><a class="footerMenu-link" href="https://drwatsondental.com/privacy">Privacy</a></li>
-                    <li><a class="footerMenu-link" href="https://drwatsondental.com/terms">Terms</a></li>
+                    <li><a class="footerMenu-link" href="https://drwatsondental.com/privacy">Privacy Policy</a></li>
+                    <li><a class="footerMenu-link" href="https://drwatsondental.com/terms">Terms and Conditions</a></li>
                 </ul>
             </nav>
         <p>
-            Copyright © ${currentYear} Dr Watson Dental Clinic
+            Copyright © {currentYear} Dr Watson Dental Clinic
         </p>
     </footer>
     );

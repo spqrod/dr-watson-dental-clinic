@@ -1,4 +1,4 @@
-import "../styles/index.css";
+import "../styles/home.css";
 import smilingWoman from "../images/smiling-woman-2.png";
 import star from "../images/star.svg";
 import ggl from "../images/ggl.svg";
@@ -8,8 +8,9 @@ import photoPM from "../images/photo-pm.png";
 import photoCP from "../images/photo-cp.png";
 import photoCL from "../images/photo-cl.png";
 import photoDZ from "../images/photo-dz.png";
+import { Link } from "react-router-dom";
 
-function Index() {
+function Home() {
     return (
         <div>
             <section id="heroSection">
@@ -19,7 +20,7 @@ function Index() {
                     <p>Dr Watson Dental Clinic is a trusted family dentist in Lusaka 🇿🇲.
                         We are open 7 days a week from 8:00 to 17:00 at Leopards Hill Mall.</p>
                     <div class="button">
-                        <a href="https://drwatsondental/appointment">Book Appointment</a>
+                        <Link to="/appointment">Book Appoinment</Link>
                     </div>
                     <p>Or call <a href="tel:+260955336825">+260 955 336825</a></p>
                 </div>
@@ -174,7 +175,7 @@ function Index() {
                     </div>
                 </div>
                 <div class="button" id="dentalServices-button">
-                    <a href="https://drwatsondental.com/services">See All Services</a>
+                    <Link to="/services">See All Services</Link>
                 </div>
             </section>
             <section>
@@ -185,7 +186,7 @@ function Index() {
                         <p>We stand by our values and work and recommend only what’s medically needed. </p>
                         <p>You can be certain that we have your best interests at heart ❤️</p>
                         <div class="button">
-                            <a href="https://drwatsondental.com/appointment">Book Your Appointment</a>
+                            <Link to="/appointment">Book Your Appointment</Link>
                         </div>
                     </div>
                     <div>
@@ -201,4 +202,4 @@ function Index() {
     );
 }
 
-export default Index;
+export default Home;
