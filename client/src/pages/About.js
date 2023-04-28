@@ -17,18 +17,18 @@ function About() {
             <section>
                 <h1>Meet the Team</h1>
                 <div id="team-members-container">
-                    <div class="team-member">
+                    <div className="team-member">
                         <img src={require("../images/dr-watson-with-patient.jpg")} alt="Dr Watson with a patient"/>
                         <h3>Dr Nataliya Watson</h3>
-                        <p class="team-member-position">Dental Surgeon</p>
+                        <p className="team-member-position">Dental Surgeon</p>
                         <p>Dr Nataliya Watson is a dental surgeon with more than 25 years of experience.
                             She graduated from Medical University in the USSR.
                             In her free time, Nataliya loves to meditate, eat avocados and water her plants.</p>
                     </div>
-                    <div class="team-member">
+                    <div className="team-member">
                         <img src={require("../images/memory.jpg")} alt="Memory"/>
                         <h3>Ms Memory Lufwendo</h3>
-                        <p class="team-member-position">Assistant</p>
+                        <p className="team-member-position">Assistant</p>
                         <p>Memory has years of experience in assisting our doctors during dental treatment.
                             Memory is a very social person. She loves reading, listening to music and singing.</p>
                     </div>
