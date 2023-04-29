@@ -17,24 +17,24 @@ function Appointment() {
 		</div>
         </section>
 		<section>
-			<form method="post" action="email-form.php"> 
-				<h3>Book Appointment Online</h3>
-				<p className="headline form-headline">
-					Please be advised that the chosen time might not be available. <br/>We will contact you to confirm.
-				</p>
+			<h3>Book Appointment Online</h3>
+			<p className="headline form-headline">
+				Please be advised that the chosen time might not be available. <br/>We will contact you to confirm.
+			</p>
+			<form className="appointment-form" method="post" action="email-form.php"> 
 				<div className="form-inputContainer">
 					<input type="date" name="date" id="date" className="form-input"/>
 				</div>
-				<div className="form-inputContainer" id="form-inputContainer-time" errorMessage = "Please choose time between 08:00 and 16:30">
+				<div className="form-inputContainer" id="form-inputContainer-time" errormessage = "Please choose time between 08:00 and 16:30">
 					<input type="time" name="time" id="time" className="form-input" min="9:00" max="16:30"/>
 				</div>
 				<div className="form-inputContainer">
-					<input type="text" name="name" id="name" placeholder="Name" className="form-input" pattern="[a-zA-Z]*" minlength="1" maxlength="30"/>
+					<input type="text" name="name" id="name" placeholder="Name" className="form-input" pattern="[a-zA-Z]*" minLength="1" maxLength="30"/>
 				</div>			
-				<div className="form-inputContainer" errorMessage = "Please enter a valid phone number">
-					<input type="tel" name="phone" id="phone" placeholder="Phone Number" className="form-input" pattern="[+]?[\d\s()-]*" minlength="6" maxlength="30" required/>
+				<div className="form-inputContainer" errormessage = "Please enter a valid phone number">
+					<input type="tel" name="phone" id="phone" placeholder="Phone Number" className="form-input" pattern="[+]?[\d\s()-]*" minLength="6" maxLength="30" required/>
 				</div>
-				<div className="form-inputContainer" errorMessage="Please enter your message">
+				<div className="form-inputContainer" errormessage="Please enter your message">
 					<input type="text" name="message" id="message" placeholder="Message" className="form-input"/>
 				</div>
 				<div className="form-checkboxContainer">
