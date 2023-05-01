@@ -1,6 +1,36 @@
 import "../styles/appointment.css";
+import dayjs from "dayjs";
+import { useState } from "react";
+import validator from "validator";
 
 function Appointment() {
+	const today = dayjs();
+	const todayPlus3Months = today.add(3, "month");
+	const [status, setStatus] = useState("");
+
+	async function handleSubmit(e) {
+		e.preventDefault();
+		setStatus("Sending...");
+		const { date, time, name, phone, message } = e.target.elements;
+		const details = {
+			date: validator.stripLow(String(date.value)),
+			time: validator.stripLow(String(time.value)),
+			name: validator.stripLow(String(name.value)),
+			phone: validator.stripLow(String(phone.value)),
+			message: validator.stripLow(String(message.value))
+		}
+
+		const response = await fetch("http://localhost:8080/appointment", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json;charset=utf-8",
+			},
+			body: JSON.stringify(details)
+		});
+
+		const result = await response.json();
+		alert(result.status);
+	}
     return (
         <div>
         <section>
@@ -21,28 +51,30 @@ function Appointment() {
 			<p className="headline form-headline">
 				Please be advised that the chosen time might not be available. <br/>We will contact you to confirm.
 			</p>
-			<form className="appointment-form" method="post" action="email-form.php"> 
-				<div className="form-inputContainer">
-					<input type="date" name="date" id="date" className="form-input"/>
-				</div>
-				<div className="form-inputContainer" id="form-inputContainer-time" errormessage = "Please choose time between 08:00 and 16:30">
-					<input type="time" name="time" id="time" className="form-input" min="9:00" max="16:30"/>
-				</div>
-				<div className="form-inputContainer">
-					<input type="text" name="name" id="name" placeholder="Name" className="form-input" pattern="[a-zA-Z]*" minLength="1" maxLength="30"/>
-				</div>			
-				<div className="form-inputContainer" errormessage = "Please enter a valid phone number">
-					<input type="tel" name="phone" id="phone" placeholder="Phone Number" className="form-input" pattern="[+]?[\d\s()-]*" minLength="6" maxLength="30" required/>
-				</div>
-				<div className="form-inputContainer" errormessage="Please enter your message">
+			<div className="form-container">
+				<form className="appointment-form" onSubmit={handleSubmit}> 
+					<label htmlFor="date">Choose date:</label>
+					<input type="date" name="date" id="date" className="form-input" min={today.format("YYYY-MM-DD")} max={todayPlus3Months.format("YYYY-MM-DD")} defaultValue={today.format("YYYY-MM-DD")}/>
+					<label htmlFor="time">Choose time (we are open from 08:00 to 17:00):</label>
+					<select className="form-input" name="time" id="time">
+						<option value="08:00">08:00</option>
+						<option value="09:00">09:00</option>
+						<option value="10:00">10:00</option>
+						<option value="11:00">11:00</option>
+						<option value="12:00">12:00</option>
+						<option value="13:00">13:00</option>
+						<option value="14:00">14:00</option>
+						<option value="15:00">15:00</option>
+						<option value="16:00">16:00</option>
+					</select>
+					<input type="text" name="name" id="name" placeholder="Name" className="form-input" pattern="[a-zA-Z]*" maxLength="30"/>
+					<input type="tel" name="phone" id="phone" placeholder="Phone Number" className="form-input" minLength="6" maxLength="30" required/>
 					<input type="text" name="message" id="message" placeholder="Message" className="form-input"/>
-				</div>
-				<div className="form-checkboxContainer">
 					<input type="checkbox" className="form-checkbox" required/>
 					<label htmlFor="checkbox">I have read and agree to the Terms and Conditions and Privacy Policy</label>
-				</div>
-				<button type="submit" className="button">Submit</button>
-			</form>
+					<button type="submit" className="button">Submit</button>
+				</form>
+			</div>
 		</section>
         </div>
     );

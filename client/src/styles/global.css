@@ -74,6 +74,7 @@ h3 {
 
 p, 
 input, 
+select,
 label, 
 ul, 
 ol, 
@@ -184,4 +185,39 @@ button:hover {
 
 .socialMedia:hover {
 	transform: var(--global-transform);
+}
+
+/* FORM */
+
+.form-container {
+	display: flex;
+	justify-content: center;
+}
+
+form {
+	width: 500px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	align-items: center;
+}
+
+form .input-field {
+	width: 500px;
+	width: 100%;
+	height: 30px;
+	border: 1px solid black;
+	margin-bottom: 16px;
+	padding: 12px;
+}
+
+form .checkbox-container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+form label {
+	align-self: flex-start;
+	text-align: left;
 }
