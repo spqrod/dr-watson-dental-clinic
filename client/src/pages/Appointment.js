@@ -1,7 +1,6 @@
 import "../styles/appointment.css";
 import dayjs from "dayjs";
 import { useState } from "react";
-import validator from "validator";
 
 function Appointment() {
 	const today = dayjs();
@@ -13,11 +12,11 @@ function Appointment() {
 		setStatus("Sending...");
 		const { date, time, name, phone, message } = e.target.elements;
 		const details = {
-			date: validator.stripLow(String(date.value)),
-			time: validator.stripLow(String(time.value)),
-			name: validator.stripLow(String(name.value)),
-			phone: validator.stripLow(String(phone.value)),
-			message: validator.stripLow(String(message.value))
+			date: date.value,
+			time: time.value,
+			name: name.value,
+			phone: phone.value,
+			message: message.value
 		}
 
 		const response = await fetch("http://localhost:8080/appointment", {

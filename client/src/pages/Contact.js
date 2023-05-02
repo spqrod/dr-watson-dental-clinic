@@ -1,6 +1,30 @@
 import "../styles/contact.css";
 
 function Contact() {
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+        const { name, phone, email, message } = e.target.elements;
+
+        const messageDetails = {
+            name: name.value,
+            phone: phone.value,
+            email: email.value,
+            message: message.value
+        };
+
+        const response = await fetch("http://localhost:8080/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json;charset=utf-8"
+            },
+            body: JSON.stringify(messageDetails),
+        });
+        
+        const result = await response.json();
+        alert(result.status);
+    };
+
     return (
         <div>
             <section>
@@ -16,26 +40,18 @@ function Contact() {
                 </div>
             </section>
             <section>
-                <form method="post" action="email-form.php"> 
-                    <h3>Send us an email</h3>
-                    <div className="form-inputContainer">
-                        <input type="text" name="name" id="name" placeholder="Name" className="form-input" pattern="[a-zA-Z]*" minLength="1" maxLength="30"/>
-                    </div>			
-                    <div className="form-inputContainer" errormessage="Please enter a valid email">
+                <h2>Send us an email</h2>
+                <div className="form-container">
+                    <form onSubmit={handleSubmit}> 
+                        <input type="text" name="name" id="name" placeholder="Name" className="form-input" pattern="[a-zA-Z]*" maxLength="40"/>			
                         <input type="email" name="email" id="email" placeholder="Email" className="form-input" pattern="[\w\.\-]+@[a-zA-Z\d\-]+\.[a-zA-Z]{2,10}\.?[a-zA-Z]{0,10}" maxLength="50"/>
-                    </div>
-                    <div className="form-inputContainer" errormessage = "Please enter a valid phone number">
                         <input type="tel" name="phone" id="phone" placeholder="Phone Number" className="form-input" pattern="[+]?[\d\s()-]*" minLength="6" maxLength="30"/>
-                    </div>
-                    <div className="form-inputContainer" errormessage="Please enter your message">
                         <input type="text" name="message" id="message" placeholder="Message" className="form-input" required/>
-                    </div>
-                    <div className="form-checkboxContainer">
                         <input type="checkbox" className="form-checkbox" required/>
                         <label htmlFor="checkbox">I have read and agree to the Terms and Conditions and Privacy Policy</label>
-                    </div>
-                    <button type="submit" className="button">Submit</button>
-                </form>
+                        <button type="submit" className="button">Submit</button>
+                    </form>
+                </div>
             </section>
             <section>
                 <h3>Visit us</h3>
