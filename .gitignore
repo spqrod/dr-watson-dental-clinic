@@ -1,0 +1,4 @@
+/client/node_modules
+/old-website
+/server/.env
+/server/node_modules
