@@ -1,4 +1,5 @@
 /client/node_modules
 /old-website
+/from-client
 /server/.env
 /server/node_modules
