@@ -19,7 +19,7 @@ function Appointment() {
 			message: message.value
 		}
 
-		const response = await fetch("http://localhost:8080/appointment", {
+		const response = await fetch("https://drwatsondental.com/appointment", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json;charset=utf-8",

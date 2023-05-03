@@ -13,7 +13,7 @@ function Contact() {
             message: message.value
         };
 
-        const response = await fetch("http://localhost:8080/contact", {
+        const response = await fetch("https://drwatsondental.com/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json;charset=utf-8"
