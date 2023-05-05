@@ -7,6 +7,8 @@ function Appointment() {
 	const todayPlus3Months = today.add(3, "month");
 	const [status, setStatus] = useState("");
 
+	console.log(process.env.TEST);
+
 	async function handleSubmit(e) {
 		e.preventDefault();
 		setStatus("Sending...");
