@@ -1,16 +1,24 @@
 import "../styles/contact.css";
+import ReCAPTCHA from "react-google-recaptcha";
+import { useRef } from "react";
 
 function Contact() {
 
+    const captchaRef = useRef(null);
+
     async function handleSubmit(e) {
         e.preventDefault();
+        const token = captchaRef.current.getValue();
+        captchaRef.current.reset();
+
         const { name, phone, email, message } = e.target.elements;
 
         const messageDetails = {
             name: name.value,
             phone: phone.value,
             email: email.value,
-            message: message.value
+            message: message.value,
+            token
         };
 
         const response = await fetch("https://drwatsondental.com/contact", {
@@ -49,6 +57,10 @@ function Contact() {
                         <input type="text" name="message" id="message" placeholder="Message" className="form-input" required/>
                         <input type="checkbox" className="form-checkbox" required/>
                         <label htmlFor="checkbox">I have read and agree to the Terms and Conditions and Privacy Policy</label>
+                        <ReCAPTCHA 
+                            sitekey = { process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY }
+                            ref = { captchaRef }
+                        />
                         <button type="submit" className="button">Submit</button>
                     </form>
                 </div>

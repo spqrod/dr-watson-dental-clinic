@@ -11,7 +11,6 @@ function Appointment() {
 	async function handleSubmit(e) {
 		e.preventDefault();
 		const token = captchaRef.current.getValue();
-		console.log(token);
 		captchaRef.current.reset();
 
 		const { date, time, name, phone, message } = e.target.elements;
