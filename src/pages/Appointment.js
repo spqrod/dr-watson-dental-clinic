@@ -1,24 +1,27 @@
 import "../styles/appointment.css";
 import dayjs from "dayjs";
-import { useState } from "react";
+import { useRef } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 function Appointment() {
 	const today = dayjs();
 	const todayPlus3Months = today.add(3, "month");
-	const [status, setStatus] = useState("");
-
-	console.log(process.env.TEST);
+	const captchaRef = useRef(null);
 
 	async function handleSubmit(e) {
 		e.preventDefault();
-		setStatus("Sending...");
+		const token = captchaRef.current.getValue();
+		console.log(token);
+		captchaRef.current.reset();
+
 		const { date, time, name, phone, message } = e.target.elements;
 		const details = {
 			date: date.value,
 			time: time.value,
 			name: name.value,
 			phone: phone.value,
-			message: message.value
+			message: message.value,
+			token: token
 		}
 
 		const response = await fetch("https://drwatsondental.com/appointment", {
@@ -73,6 +76,10 @@ function Appointment() {
 					<input type="text" name="message" id="message" placeholder="Message" className="form-input"/>
 					<input type="checkbox" className="form-checkbox" required/>
 					<label htmlFor="checkbox">I have read and agree to the Terms and Conditions and Privacy Policy</label>
+					<ReCAPTCHA 
+						sitekey = {process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY} 
+						ref = {captchaRef}
+					/>
 					<button type="submit" className="button">Submit</button>
 				</form>
 			</div>
