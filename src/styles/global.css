@@ -12,13 +12,11 @@
 	--hamburgerLine-start-position: 16px;
 	--hamburgerLine-end-position: 24px;
 
-
 	--primary-color: rgb(216, 137, 228);;
 	--primary-color-light: rgb(237, 173, 247);
 	--primary-color-light-2: rgb(252, 233, 255);
 	--primary-color-dark: rgb(228, 124, 244);
 	--gradient: 33deg, var(--primary-color-light-2), 80%, var(--primary-color-light);
-
 }
 
 * {

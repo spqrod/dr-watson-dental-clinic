@@ -1,9 +1,13 @@
 import "../styles/services.css";
 import { Link } from "react-router-dom";
+import Popup from '../components/Popup.js';
+
 
 function Services() {
     return (
         <div>
+            <Popup />
+
             <section id="services-hero-section">
                 <div id="services-hero-text">
                     <h1>Everything you expect from a dentist.<br/>

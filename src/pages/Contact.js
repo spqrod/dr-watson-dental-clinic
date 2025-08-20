@@ -1,6 +1,8 @@
 import "../styles/contact.css";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useRef } from "react";
+import Popup from '../components/Popup.js';
+
 
 function Contact() {
 
@@ -35,6 +37,8 @@ function Contact() {
 
     return (
         <div>
+            <Popup />
+
             <section>
                 <h1>Contact Us</h1>
                 <div id="phones-container">

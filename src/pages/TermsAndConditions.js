@@ -1,6 +1,11 @@
+import Popup from '../components/Popup.js';
+
+
 function TermsAndConditions() {
     return (
         <section>
+            <Popup />
+
         
             <h1>
                 Terms and Conditions

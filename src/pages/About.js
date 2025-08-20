@@ -1,9 +1,13 @@
 import "../styles/about.css";
 import { Link } from "react-router-dom";
+import Popup from '../components/Popup.js';
+
 
 function About() {
     return (
         <div>
+            <Popup />
+
             <section>
                 <h1>About Dr Watson Dental Clinic</h1>
                 <p>We are passionate to heal. That’s our motto and our life.<br/><br/>

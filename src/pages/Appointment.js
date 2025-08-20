@@ -2,6 +2,8 @@ import "../styles/appointment.css";
 import dayjs from "dayjs";
 import { useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import Popup from '../components/Popup.js';
+
 
 function Appointment() {
 	const today = dayjs();
@@ -31,14 +33,25 @@ function Appointment() {
 			body: JSON.stringify(details)
 		});
 
-		const result = await response.json();
-		alert(result.status);
+		// const result = await response.json();
+		// alert(result.status);
 	}
     return (
         <div>
+        <Popup />
+
         <section>
             <h1>Book Your Appointment</h1>
-            <p className="headline">Easily book an appointment by using the form below or just calling or messaging us</p>
+            {/* <p className="headline">Easily book an appointment by using the form below or just calling or messaging us</p> */}
+            <p>
+                Dear Patients and Friends, we would like to inform you that Dr Watson Dental Clinic is <strong>permanently closed</strong>. We DO NOT accept appointments and see patients. <br></br><br></br>
+
+                From the bottom of our hearts we thank you for trusting us your health and smiles during all these years of daily work. <br></br><br></br>
+
+                With love, Dr Watson Dental Clinic's team.<br></br><br></br>
+
+                ❤️🇿🇲
+            </p>
 		<div id="phones-container">
 			<div><p><a className="contactTextLink" href="tel:+260955336825"><img className="contactIcon" src={require("../images/phone.png")}/> +260 955 336825</a></p></div>
 			<div><p><a className="contactTextLink" href="tel:+260950107838"><img className="contactIcon" src={require("../images/landline.png")}/> +260 950 107838</a></p></div>

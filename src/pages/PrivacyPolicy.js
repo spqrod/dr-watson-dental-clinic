@@ -1,7 +1,13 @@
+import Popup from '../components/Popup.js';
+
+
 function PrivacyPolicy() {
     return (
         
         <section>
+
+            <Popup />
+
 
             <h1>Privacy Policy</h1>
 

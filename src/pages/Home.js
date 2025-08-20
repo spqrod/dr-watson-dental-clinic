@@ -9,10 +9,12 @@ import photoCP from "../images/photo-cp.png";
 import photoCL from "../images/photo-cl.png";
 import photoDZ from "../images/photo-dz.png";
 import { Link } from "react-router-dom";
+import Popup from '../components/Popup.js';
 
 function Home() {
     return (
         <div>
+            <Popup />
             <section id="heroSection">
                 <div id="heroSection-info">
                     <h1>Peace begins with a smile</h1>

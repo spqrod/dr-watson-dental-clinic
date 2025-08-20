@@ -1,8 +1,11 @@
 import "../styles/blog.css";
+import Popup from '../components/Popup.js';
 
 function Blog() {
     return (
         <section>
+            <Popup />
+
             <h1>Our Dental Blog</h1>
             <p className="headline">Read our latest tips and tricks on how to care for your teeth and mouth</p>
             <div id="blogPostsContainer">
